@@ -1,4 +1,4 @@
-package app
+package config
 
 import (
 	"context"
@@ -30,6 +30,6 @@ func ConnectMongoDB() {
 	MongoClient = client
 }
 
-func GetMongoCollection(database, collection string) *mongo.Collection {
-	return MongoClient.Database(database).Collection(collection)
+func GetMongoCollection(collection string) *mongo.Collection {
+	return MongoClient.Database("db_ecomm").Collection(collection)
 }

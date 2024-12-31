@@ -1,0 +1,14 @@
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+
+###
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "name": "Indomie Goreng",
+  "price": 3000,
+  "category": "Makanan Instan"
+}
+###
