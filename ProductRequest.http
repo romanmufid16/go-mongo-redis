@@ -7,8 +7,11 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-  "name": "Indomie Goreng",
+  "name": "Indomie Ayam Bawang",
   "price": 3000,
   "category": "Makanan Instan"
 }
+###
+
+GET http://localhost:3000/products
 ###

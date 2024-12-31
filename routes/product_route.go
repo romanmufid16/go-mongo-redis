@@ -10,4 +10,6 @@ func ProductRoutes(app *fiber.App) {
 	products := app.Group("/products")
 
 	products.Post("/", productHandler.CreateProduct)
+	products.Get("/", productHandler.GetAllProducts)
+	products.Get("/:id", productHandler.GetProductById)
 }

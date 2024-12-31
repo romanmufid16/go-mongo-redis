@@ -30,3 +30,25 @@ func (h *ProductHandler) CreateProduct(ctx *fiber.Ctx) error {
 	response := model.BuildResponse("Product data created", result)
 	return ctx.Status(fiber.StatusCreated).JSON(response)
 }
+
+func (h *ProductHandler) GetAllProducts(ctx *fiber.Ctx) error {
+	result, err := h.productService.GetAllProducts(ctx)
+	if err != nil {
+		return err
+	}
+
+	response := model.BuildResponse("Product retrieved successfully", result)
+	return ctx.Status(fiber.StatusOK).JSON(response)
+}
+
+func (h *ProductHandler) GetProductById(ctx *fiber.Ctx) error {
+	id := ctx.Params("id")
+
+	result, err := h.productService.GetProductById(id, ctx)
+	if err != nil {
+		return err
+	}
+
+	response := model.BuildResponse("Product retrieved successfully", result)
+	return ctx.Status(fiber.StatusOK).JSON(response)
+}
